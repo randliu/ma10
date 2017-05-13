@@ -1,0 +1,16 @@
+
+#添加买入信号
+ma sigbuy -a --code 00700 --date 20170819
+
+ma sigbuy --code 00700 #缺省是今天
+
+ma sigbuy --list  --done --obsolete -w(valid)  #列表,带状态.
+#out put a dataframe
+#date code name
+
+
+ma sigbuy --index 28 --set_done
+
+#更新数据
+ma update
+
