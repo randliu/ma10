@@ -1,7 +1,7 @@
 # -*- coding: utf-8 -*-
 #
 from django.db import models
-
+import  datetime
 
 # Create your models here.
 
@@ -33,7 +33,7 @@ class SigBuy(models.Model):
     )
 
     seq = models.AutoField(primary_key=True)
-    date = models.DateField(auto_created=True)
+    date = models.DateField(auto_created=True,default=datetime.datetime.now())
     code = models.CharField(max_length=20, default=u"00000000")
     status = models.CharField(max_length=2,choices=STATUS_CHOICES,default=on)
 
@@ -43,6 +43,7 @@ class Price(models.Model):
     date = models.DateField(auto_created=True)
     open = models.FloatField()
     close = models.FloatField()
+    code = models.CharField(max_length=20, default=u"00000000")
 
 
 class MA10(models.Model):
